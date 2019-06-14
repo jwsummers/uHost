@@ -7,8 +7,8 @@ const mobileNav = document.querySelector(".mobile-nav");
 
 for (var i = 0; i < selectPlanButton.length; i++) {
   selectPlanButton[i].addEventListener("click", function() {
-    modal.style.display = "block";
-    backdrop.style.display = "block";
+    modal.classList.add("open");
+    backdrop.classList.add("open");
   });
 }
 
@@ -17,18 +17,18 @@ if (negativeButton) {
 }
 
 backdrop.addEventListener("click", function() {
-  mobileNav.style.display = "none";
+  mobileNav.classList.remove("open");
   closeModal();
 });
 
 function closeModal() {
   if (modal) {
-    modal.style.display = "none";
+    modal.classList.remove("open");
   }
-  backdrop.style.display = "none";
+  backdrop.classList.remove("open");
 }
 
 toggleButton.addEventListener("click", function() {
-  mobileNav.style.display = "block";
-  backdrop.style.display = "block";
+  mobileNav.classList.add("open");
+  backdrop.classList.add("open");
 });
